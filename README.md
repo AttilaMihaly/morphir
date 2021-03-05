@@ -1,6 +1,6 @@
 [![FINOS - Incubating](https://cdn.jsdelivr.net/gh/finos/contrib-toolbox@master/images/badge-incubating.svg)](https://finosfoundation.atlassian.net/wiki/display/FINOS/Incubating)
 
-# Morphir
+# ![morphir](assets/2020_Morphir_Logo_Horizontal.svg)
 
 **Morphir** is a multi-language system built on a data format that captures an application's domain model and business logic in a technology agnostic manner. Having all the business knowledge available as data allows you to process it programatically in various ways:
 
@@ -10,7 +10,7 @@
 - **Store it** to retrieve and explain earlier versions of the logic in seconds
 - and much more ...
 
-Read more [Morphir documentation](https://morgan-stanley.github.io/morphir/)
+Read more [Morphir documentation](https://finos.github.io/morphir/)
 
 ## Morphir IR
 
@@ -64,7 +64,7 @@ List the roadmap steps; alternatively link the Confluence Wiki page where the pr
 
 1. Fork it (<https://github.com/finos/morphir/fork>)
 2. Create your feature branch (`git checkout -b feature/fooBar`)
-3. Read our [contribution guidelines](.github/CONTRIBUTING.md) and [Community Code of Conduct](https://www.finos.org/code-of-conduct)
+3. Read our [contribution guidelines](CONTRIBUTING.md) and [Community Code of Conduct](https://www.finos.org/code-of-conduct)
 4. Commit your changes (`git commit -am 'Add some fooBar'`)
 5. Push to the branch (`git push origin feature/fooBar`)
 6. Create a new Pull Request
