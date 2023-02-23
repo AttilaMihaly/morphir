@@ -1,117 +1,59 @@
 
-# Types
-
-## Type definitions
-
-### Types in the SDK
-
-- Basics.Bool
-- Basics.Float
-- Basics.Int
-- Basics.Never
-- Basics.Order
-- Char.Char
-- Decimal.Decimal
-- Dict.Dict
-- List.List
-- LocalDate.LocalDate
-- LocalTime.LocalTime
-- Maybe.Maybe
-- Month.Month
-- Regex.Regex
-- Result.Result
-- Set.Set
-- String.String
-
-### User-defined types
-
-## Type aliases
-
-```elm
-type alias Quantity = Int
-```
-
-```scala
-type Quantity = BigInt
-```
-
-## Named records
-
-## Tagged-unions
-
-## Type expressions
-
-# Functions 
-
-## Function definitions
-
-### Functions in the SDK
-
-### User-defined functions
-
-## Value expressions
-
-### Literal
-
-```elm
-True, 1, 0.15, "foo", 'a' 
-```
-
-```scala
-true, 1, 0.15, "foo", 'a' 
-```
-
-### Constructor
-
-### Tuple
-
-### List
-
-### Record
-
-### Variable
-
-### Reference
-
-### Field
-
-### Field Function
-
-### Apply
-
-### Lambda
-
-### Let definition
-
-### Let recursion
-
-### Destructure
-
-### If-then-else
-
-```elm
-if a < b then
-    a
-else
-    b
-```
-
-
-```scala
-if (a < b) {
-    a
-} else {
-    b
-}
-```
-
-### Pattern-match
-
-```elm
-
-```
-
-### Update Record
-
-### Unit
+- Types
+  - Type definitions
+    - Types in the SDK
+      - Basics.Bool - Bool
+      - Basics.Float - Double
+      - Basics.Int - BigInt
+      - Basics.Never - Nothing
+      - Basics.Order - ?
+      - Char.Char - Char
+      - Decimal.Decimal - BigDecimal
+      - Dict.Dict - Map
+      - List.List - List
+      - LocalDate.LocalDate - Localdate
+      - LocalTime.LocalTime - LocalTime
+      - Maybe.Maybe a - Option[a]
+      - Month.Month - ?
+      - Regex.Regex - ?
+      - Result.Result - ?
+      - Set.Set a - Set[a]
+      - String.String - String
+    - User-defined types
+      - Type aliases - supported
+      - Named records - case classes
+      - Tagged-unions - sealed trait hierarchy
+    - Type expressions
+      - Variable - generic types - supported
+      - Reference - reference to other types - supported
+      - Tuple - tuple - supported (22 element limit)
+      - Record - case class instance or structural type
+      - ExtensibleRecord - structural type
+      - Function - function -supported (22 arg limit)
+      - Unit - Unit - supported 
+- Functions
+  - Function definitions
+    - Functions in the SDK
+      - There are too many of these to list out here but we'll need a mapping for each
+    - User-defined functions
+      - The differences here is that Scala supports multiple parameter lists but doesn't do currying out-of-the-box. We need to figure out a sensible mapping between the two. 
+  - Value expressions
+    - Literal - supported
+    - Constructor - supported (case class/object constructor)
+    - Tuple - supported (22 element limit)
+    - List - supported
+    - Record - supported (case class or structural value)
+    - Variable - supported
+    - Reference - supported
+    - Field - supported `foo.bar`
+    - Field Function - supported `_.foo`
+    - Apply - supported (currying and multiple argument support are differences here)
+    - Lambda - supported (Scala requires type annotations for arguments in many cases)
+    - Let definition - supported (`val` or `def` within function body)
+    - Let recursion - supported (recursive `def` within function body)
+    - Destructure - supported
+    - If-then-else - supported (Scala supports if without else)
+    - Pattern-match - supported (Scala has more features)
+    - Update Record - supported `foo.copy(bar = 1)` (only on case classes)
+    - Unit - supported `{}`
 
