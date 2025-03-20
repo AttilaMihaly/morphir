@@ -15,11 +15,77 @@ morphir-package.json
     "module": "Trade",
     "docs": "This module defines the key concepts and entities involved in trading operations, such as accounts, securities, trade orders, and their states. It captures the essential details needed to represent and process trades, including trade directions, quantities, and outcomes.",
     "types": {
-
+        "TradeState": {
+            "oneOf": ["New", "Processing", "Settled", "Cancelled"]
+        },
+        "Account": {
+            "recordOf": {
+                "id": "integer",
+                "displayName": "string"
+            }
+        },
+        "Security": {
+            "recordOf": {
+                "ticker": "string",
+                "companyName": "string"
+            }
+        },
+        "TradeSide": {
+            "oneOf": ["Buy", "Sell"]
+        },
+        "TradeOrder": {
+            "recordOf": {
+                "id": "string",
+                "state": "string",
+                "security": "string",
+                "quantity": "integer",
+                "accountId": "integer",
+                "side": "TradeSide"
+            }
+        },
+        "TradeRequest": {
+            "recordOf": {
+                "accountId": "integer",
+                "security": "string",
+                "side": "TradeSide",
+                "quantity": "integer"
+            }
+        },
+        "TradeResponse": {
+            "recordOf": {
+                "success": "boolean",
+                "id": "string",
+                "errorMessage": "string"
+            }
+        }
     },
+    "mappings": [
+        {
+            "from": "TradeState",
+            "to": "string",
+            "mapping": {
+                "New": "N",
+                "Processing": "P", 
+                "Settled": "S", 
+                "Cancelled": "C"
+            }
+        }
+    ],
     "values": {
-        
+        "isCompletedState": {
+            "function": {
+                "inputs": {
+                    "tradeState": "TradeState"
+                },
+                "output": "boolean",
+                "logic": {
+                    ":member": {
+                        "subject": {"input": "tradeState"},
+                        "of": ["Settled", "Cancelled"]
+                    }
+                } 
+            }
+        }
     }
-
 }
 ```
