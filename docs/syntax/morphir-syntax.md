@@ -9,3 +9,17 @@ In this document we will define such a syntax but to stick to the original plan 
 morphir-package.json
 
 ## Modules
+
+```json
+{
+    "module": "Trade",
+    "docs": "This module defines the key concepts and entities involved in trading operations, such as accounts, securities, trade orders, and their states. It captures the essential details needed to represent and process trades, including trade directions, quantities, and outcomes.",
+    "types": {
+
+    },
+    "values": {
+        
+    }
+
+}
+```
